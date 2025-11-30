@@ -5,6 +5,16 @@ import requests
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+# Set UTF-8 encoding for console output (fixes Cyrillic character display)
+if sys.platform == 'win32':
+    # Set console output encoding to UTF-8 on Windows
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+    # Also set environment variable for PowerShell
+    os.environ['PYTHONIOENCODING'] = 'utf-8'
+
 # Load environment variables
 load_dotenv()
 
