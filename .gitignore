@@ -3,3 +3,9 @@ data/
 venv/
 __pycache__/
 *.pyc
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.md
+!README.md
